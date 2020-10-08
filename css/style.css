@@ -26,11 +26,6 @@ span#result {
     text-align: right;
 }
 
-ul li {
-    display: inline-block;
-    list-style-type: none;
-}
-
 div{
     word-break: break-all;
      /* Non standard for webkit */
