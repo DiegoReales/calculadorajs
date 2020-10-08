@@ -1,3 +1,7 @@
+body{
+    background: #F5F5F5;
+}
+
 table {
     width: 100%;
 }
@@ -20,4 +24,27 @@ span#result {
     padding-top: 0.10rem;
     padding-bottom: 0.10rem;
     text-align: right;
+}
+
+ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+div{
+    word-break: break-all;
+     /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+div#calcs{
+    height: 180px;
+}
+
+nav{
+    background-color: black;
 }

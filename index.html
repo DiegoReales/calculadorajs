@@ -5,14 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>CALCULADORA</title>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+                <img class="d-block mx-auto" src="./img/logo.png" alt="" width="50" height="50">
+            </a> 
+            <a class="navbar-brand" href="index.html">Proyecto Desarrollo Web</a> 
+        </nav>
+    </header>
     <div class="container">
 
         <div class="row justify-content-center my-5">
@@ -57,6 +65,22 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        HISTORIAL
+                    </div>
+                    <div class="overflow-auto" id="calcs">
+                        <ul>
+                           <li id="history"></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button id="clearHistory" class="btn btn-danger font-weight-bold">Limpiar historial</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

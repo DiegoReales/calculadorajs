@@ -3,6 +3,7 @@ let operandob = "0";
 let operacion = "";
 let nuevaentrada = true;
 let finished = true;
+var clic = 0;
 
 const result = document.getElementById('result');
 const calc = document.getElementById('calc');
@@ -10,6 +11,7 @@ const clear = document.getElementById('clear');
 
 calc.addEventListener('click', fcalc);
 clear.addEventListener('click', fclear);
+clearHistory.addEventListener('click', fclearH);
 
 const numbers = document.querySelectorAll('button.number');
 for (const btn of numbers) {
@@ -25,6 +27,7 @@ for (const btn of symbols) {
             operandoa = result.textContent;
             operacion = this.value;
             console.log(operandoa, operacion, operandob);
+            clic=0;
         } else {
             operandob = result.textContent;
             console.log(operandoa, operacion, operandob);
@@ -49,12 +52,16 @@ function add(key) {
 }
 
 function fcalc() {
-    operandob = result.textContent;
-    console.log(operandoa, operacion, operandob);
-    result.textContent = eval(operandoa + operacion + operandob); 
-    operandoa = result.textContent;
-    nuevaentrada = true;
-    finished = true;
+    if (clic == 0) {
+        operandob = result.textContent;
+        console.log(operandoa, operacion, operandob);
+        result.textContent = eval(operandoa + operacion + operandob); 
+        document.getElementById("history").innerHTML += operandoa+operacion+operandob+"="+result.textContent+"<br/>";
+        operandoa = result.textContent;
+        nuevaentrada = true;
+        finished = true;
+        clic++;
+    } 
 }
 
 function fclear() { 
@@ -64,4 +71,9 @@ function fclear() {
     nuevaentrada = true;
     finished = true;
     result.textContent = 0;
+    click=0;
+}
+
+function fclearH(){
+    document.getElementById("history").innerHTML = "";
 }
